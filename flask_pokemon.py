@@ -9,17 +9,20 @@ from pokemon_info import pokemon_info
 from PIL import Image
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'csumb-otter' # added a secret key
 boostrap = Bootstrap(app)
 
 # form for asking what pokemon they want to choose
 class Pokemon(FlaskForm):
+
+    # changed the wording a bit
     pokemon_1 = StringField(
-        'Choose your first Pokemon from Generation 6: ', 
+        'Choose your 1ˢᵗ Pokemon from Generation 6: ', 
         validators=[DataRequired()]
     )
 
     pokemon_2 = StringField(
-        'Choose your second Pokemon from Generation 6: ', 
+        'Choose your 2ⁿᵈ Pokemon from Generation 6: ', 
         validators=[DataRequired()]
     )
 
@@ -42,15 +45,13 @@ def home():
         return redirect('/battle_arena')
 
     # home page
-    return render_template('home.html', pokemon_info = pokemon_info, form = form)
-
+    return render_template('index.html', pokemon_info = pokemon_info, form = form)
 
 @app.route('/battle_arena')
 def battle_arena():
         
     # page displaying pokemon on battle arena
     return render_template('battle_arena.html', pokemon_info = pokemon_info, both_pokemon = both_pokemon)
-
 
 @app.route('/winner')
 def winner(pokemon_winner):

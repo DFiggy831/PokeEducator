@@ -1,0 +1,42 @@
+<html>
+  <head>
+    {% block head %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      {% block styles %}
+        {{ bootstrap.load_css() }}
+      {% endblock %}
+      <title>PokeEducator</title>
+    {% endblock %}
+    <style>
+      a:hover {
+        color: #bccacb;
+      }
+    </style>
+  </head>
+  <body style="background-image: url('https://images4.alphacoders.com/661/661582.png'); height:100%; background-repeat: no-repeat; background-position: center; background-size: cover;">
+      {% block content %}
+        <div style="background: #215153; height: 70px;">
+          <div>
+            <a href="/"><h1 style="font-size: 55px; color: #fff; text-align:center;">PokeEducator</h1></a>
+            <!-- <h1 style="font-size: 55px;color: white; margin: auto; width: 50%; text-align: center;">PokeEducator</h1> -->
+          </div>
+        </div>
+        <div >
+          <form method="POST" action="/" style="color:white;text-align: center; background-color:#215153;  margin-left: 500px; padding:15px; margin-top: 245px; width: 450px;">
+            {{ form.csrf_token }}
+            {{ form.pokemon_1.label }} 
+            {{ form.pokemon_1(size=32) }}
+            <br>
+            <br>
+            {{ form.csrf_token }}
+            {{ form.pokemon_2.label }} 
+            {{ form.pokemon_2(size=32) }}
+            <br>
+            <br>
+            <input type="submit" value="BATTLE" style="width:200px; border-radius: 50px; border: 0px;">
+          </form>
+        </div>
+      {% endblock %}
+  </body>
+</html
