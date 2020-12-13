@@ -25,11 +25,11 @@ class Pokemon(FlaskForm):
         'Choose your 2ⁿᵈ Pokemon from Generation 6: ', 
         validators=[DataRequired()]
     )
-
+both_pokemon = []
 # storing chosen pokemon in a list
 def store_pokemon(poke_1, poke_2):
 
-    both_pokemon = []
+    # both_pokemon = []
 
     both_pokemon.append(poke_1)
     both_pokemon.append(poke_2)
@@ -49,12 +49,13 @@ def home():
 
 @app.route('/battle_arena')
 def battle_arena():
-        
+
+
     # page displaying pokemon on battle arena
     return render_template('battle_arena.html', pokemon_info = pokemon_info, both_pokemon = both_pokemon)
 
 @app.route('/winner')
-def winner(pokemon_winner):
-        
+def winner():
+    pokemon_winner = "chespin"
     # page displaying the winner pokemon
     return render_template('winner.html', pokemon_info = pokemon_info, pokemon_winner = pokemon_winner, both_pokemon = both_pokemon)

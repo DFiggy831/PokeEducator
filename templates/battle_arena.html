@@ -1,0 +1,52 @@
+<html>
+    <head>
+        {% block head %}
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          {% block styles %}
+            {{ bootstrap.load_css() }}
+          {% endblock %}
+          <title>PokeEducator</title>
+        {% endblock %}
+        <style>
+          a:hover {
+            color: #bccacb;
+          }
+        </style>
+      </head>
+    <body style="background-repeat: no-repeat; height: 100%; background-size: cover; background-image: url('https://www.ssbwiki.com/images/b/b4/SSB4UPokemonStadium2Omega.jpg');">
+       <div>
+            <div>
+            <form method="POST" action="/" style="color:white;text-align: center; background-color:#215153; margin-left: 500px; padding:15px;  width: 450px;">
+                <input type="submit" value="BATTLE" style="width:200px; border-radius: 50px; border: 0px;">
+              </form>
+            </div>
+            <div>
+
+                {% for pokemon in pokemon_info %}
+                    {% if both_pokemon[0] == pokemon["name"] %}
+                        <img src="/static/images/{{ pokemon['image_id'] }}.png"
+                        width = "200"
+                        height="200"
+                        style = "margin-top: 400px; margin-left:325px"
+                        alt="{{pokemon_info[0]['image_id']}}"
+                        >
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div>
+                {% for pokemon in pokemon_info %}
+                    {% if both_pokemon[1] == pokemon["name"] %}
+                        <img src="/static/images/{{ pokemon['image_id'] }}.png"
+                        width = "250"
+                        height="250"
+                        style = "margin-top: -275px; margin-left: 875px;"
+                        alt="{{pokemon_info[0]['image_id']}}"
+                        >
+                    {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
