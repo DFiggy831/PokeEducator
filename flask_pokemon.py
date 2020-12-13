@@ -49,15 +49,64 @@ def home():
     # home page
     return render_template('index.html', pokemon_info = pokemon_info, form = form)
 
-@app.route('/battle_arena')
+@app.route('/battle_arena', methods=('GET', 'POST'))
 def battle_arena():
-
+    
+    # if validate_on_submit():
+    #     return redirect('/winner')
 
     # page displaying pokemon on battle arena
     return render_template('battle_arena.html', pokemon_info = pokemon_info, both_pokemon = both_pokemon)
 
-@app.route('/winner')
+@app.route('/winner', methods=('GET', 'POST'))
 def winner():
     pokemon_winner = "chespin"
+    p1_c = 0
+    p2_c = 0
+    for pokemon in pokemon_info:
+        if both_pokemon[0] == pokemon['name']:
+            p1_type1 = pokemon['type1']
+
+    for pokemon in pokemon_info:
+        if both_pokemon[1] == pokemon['name']:
+            p2_type1 = pokemon['type1']
+
+    for pokemon in pokemon_info:
+        if both_pokemon[0] == pokemon['name']:
+            p1_type2 = pokemon['type2']
+
+    for pokemon in pokemon_info:
+        if both_pokemon[1] == pokemon['name']:
+            p2_type2 = pokemon['type2']
+
+    for pokemon in pokemon_info:
+        if both_pokemon[0] == pokemon['name']:
+            p1_strengths = pokemon['strengths']
+        
+    for pokemon in pokemon_info:
+        if both_pokemon[1] == pokemon['name']:
+            p2_strengths = pokemon['strengths']
+    
+    if p2_type1 in p1_strengths:
+        p1_c +=1
+
+    if p2_type2 in p1_strengths:
+        p1_c +=1
+    
+    if p1_type1 in p2_strengths:
+        p2_c +=1
+
+    if p1_type2 in p2_strengths:
+        p2_c +=1
+    
+    print(p1_strengths[0])
+
+    if p1_c > p2_c:
+        pokemon_winner = both_pokemon[0]
+    elif p2_c > p1_c:
+        pokemon_winner = both_pokemon[1]
+    else:
+        pokemon_winner = "none"
+    
     # page displaying the winner pokemon
     return render_template('winner.html', pokemon_info = pokemon_info, pokemon_winner = pokemon_winner, both_pokemon = both_pokemon)
