@@ -19,10 +19,20 @@
           <div style="background: #215153; height: 70px;">
             <a href="{{ url_for('home') }}"><h1 style="font-size: 55px; color: #fff; text-align:center;">PokeEducator</h1></a>       
           </div>
-            <div>
-              <form method="POST" action="/">
-                  <input type="submit" value="BATTLE" style="border: 5px solid white; color: #fff;background-color: #215153;font-size: 50px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin:206px 0px 0px 561px; width:317px; height:169px; border: 0px;">
-                </form>
+
+            <div style="border: 5px solid white; color: #fff;background-color: #215153;font-size: 50px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin:206px 0px 0px 561px; width:317px; height:169px; border: 0px;"> 
+                {% if pokemon_winner == both_pokemon[0] %}
+                  <h1 style="color: white; height: 400px; text-align: center; vertical-align: middle; padding-top: 30px;"> {{ both_pokemon[0] }} has the advantage!</h1>
+                {% endif %}
+
+                {% if pokemon_winner == both_pokemon[1] %}
+                  <h1 style="color: white; height: 400px; text-align: center; vertical-align: middle; padding-top: 30px;"> {{ both_pokemon[1] }} has the advantage!</h1>
+                {% endif %}
+
+              {% if pokemon_winner == "none" %} 
+                <h1 style="color: white; height: 400px; text-align: center; vertical-align: middle; padding-top: 30px;">Both equally matched!</h1>
+              {% endif %}
+
             </div>
 
                 {% if pokemon_winner == both_pokemon[0] %}
@@ -44,7 +54,7 @@
                             <img src="/static/images/{{ pokemon['image_id'] }}.png"
                             width = "200"
                             height="200"
-                            style = " margin-left: 900px; margin-top:-200px;"
+                            style = " margin-left: 900px; margin-top:-75px;"
                             alt="{{pokemon_info[0]['image_id']}}"
                             >
                         {% endif %}
