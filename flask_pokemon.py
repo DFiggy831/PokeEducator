@@ -25,12 +25,14 @@ class Pokemon(FlaskForm):
         'Choose your 2ⁿᵈ Pokemon from Generation 6: ', 
         validators=[DataRequired()]
     )
+
 both_pokemon = []
 # storing chosen pokemon in a list
 def store_pokemon(poke_1, poke_2):
 
-    # both_pokemon = []
-
+    if len(both_pokemon) != 0:
+        both_pokemon.clear()
+    
     both_pokemon.append(poke_1)
     both_pokemon.append(poke_2)
 
@@ -43,7 +45,7 @@ def home():
     if form.validate_on_submit():
         store_pokemon(form.pokemon_1.data, form.pokemon_2.data)
         return redirect('/battle_arena')
-
+    
     # home page
     return render_template('index.html', pokemon_info = pokemon_info, form = form)
 

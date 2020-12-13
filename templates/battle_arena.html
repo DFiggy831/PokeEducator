@@ -16,19 +16,21 @@
       </head>
     <body style="background-repeat: no-repeat; height: 100%; background-size: cover; background-image: url('https://www.ssbwiki.com/images/b/b4/SSB4UPokemonStadium2Omega.jpg');">
        <div>
+          <div style="background: #215153; height: 70px;">
+            <a href="{{ url_for('home') }}"><h1 style="font-size: 55px; color: #fff; text-align:center;">PokeEducator</h1></a>       
+          </div>
             <div>
-            <form method="POST" action="/" style="color:white;text-align: center; background-color:#215153; margin-left: 500px; padding:15px;  width: 450px;">
-                <input type="submit" value="BATTLE" style="width:200px; border-radius: 50px; border: 0px;">
-              </form>
+              <form method="POST" action="/">
+                  <input type="submit" value="BATTLE" style="border: 5px solid white; color: #fff;background-color: #215153;font-size: 50px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin:206px 0px 0px 561px; width:317px; height:169px; border: 0px;">
+                </form>
             </div>
             <div>
-
                 {% for pokemon in pokemon_info %}
                     {% if both_pokemon[0] == pokemon["name"] %}
                         <img src="/static/images/{{ pokemon['image_id'] }}.png"
                         width = "200"
                         height="200"
-                        style = "margin-top: 400px; margin-left:325px"
+                        style = "margin-top: -70px; margin-left:340px;"
                         alt="{{pokemon_info[0]['image_id']}}"
                         >
                     {% endif %}
@@ -39,9 +41,9 @@
                 {% for pokemon in pokemon_info %}
                     {% if both_pokemon[1] == pokemon["name"] %}
                         <img src="/static/images/{{ pokemon['image_id'] }}.png"
-                        width = "250"
-                        height="250"
-                        style = "margin-top: -275px; margin-left: 875px;"
+                        width = "200"
+                        height="200"
+                        style = " margin-left: 900px; margin-top:-200px;"
                         alt="{{pokemon_info[0]['image_id']}}"
                         >
                     {% endif %}
