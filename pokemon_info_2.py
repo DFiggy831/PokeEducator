@@ -1,3 +1,13 @@
+#   Course: CST205: Multimedia Design and Programming
+#   Title: Project 2
+#   Abstract: This holds information of 23 Pokemon so
+#             we can utilize their name, types, strengths,
+#             and their image id.
+#   Author: Jasmine Moua
+#   Date: 12/11/2020
+#   Source 1: https://www.serebii.net/xy/pokemon.shtml
+#   Source 2: https://pokestop.io/
+
 pokemon_info = [
     {
         "name" : "Pancham",
