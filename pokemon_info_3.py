@@ -1,3 +1,5 @@
+# Link for Pokemon information: serebii.net/xy/pokemon.shtml
+# Link for type advantage information:  https://pokestop.io/
 pokemon_info = [
     {
         "name" : "Amaura",
