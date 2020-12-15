@@ -1,3 +1,10 @@
+<!-- CST205 -->
+<!-- DANIEL  -->
+<!-- 12/11/2020-->
+<!-- This html file essentially received information from the choices entered in index.html. It displays
+      the sprites of the 2 pokemon entered.  It also has a button that directs the user to the winner.html
+      which will display who will have the advantage.-->
+
 <html>
     <head>
         {% block head %}
@@ -14,17 +21,20 @@
           }
         </style>
       </head>
+      <!-- Background image -->
     <body style="background-repeat: no-repeat; height: 100%; background-size: cover; background-image: url('https://www.ssbwiki.com/images/b/b4/SSB4UPokemonStadium2Omega.jpg');">
        <div>
           <div style="background: #215153; height: 70px;">
             <a href="{{ url_for('home') }}"><h1 style="font-size: 55px; color: #fff; text-align:center;">PokeEducator</h1></a>       
           </div>
             <div>
+              <!-- Displays a button that directs user to the winner.html portion of the application -->
               <form method="POST" action="/winner">
                   <input type="submit" value="BATTLE" style="border: 5px solid white; color: #fff;background-color: #215153;font-size: 50px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin:206px 0px 0px 561px; width:317px; height:169px; border: 0px;">
                 </form>
             </div>
             <div>
+              <!-- This for loop displays the image for the first pokemon on the left side of the page-->
                 {% for pokemon in pokemon_info %}
                     {% if both_pokemon[0] == pokemon["name"] %}
                         <img src="/static/images/{{ pokemon['image_id'] }}.png"
@@ -38,6 +48,7 @@
             </div>
 
             <div>
+              <!-- This for loop displays the image for the second pokemon on the right side of the page -->
                 {% for pokemon in pokemon_info %}
                     {% if both_pokemon[1] == pokemon["name"] %}
                         <img src="/static/images/{{ pokemon['image_id'] }}.png"
