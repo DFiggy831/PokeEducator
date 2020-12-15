@@ -12,6 +12,7 @@ CST205
   - export FLASK_APP=flask_pokemon.py
   - export FLASK_DEBUG=1
   - flask run
-## https://github.com/DFiggy831/PokeEducator
 ## Future Work:
-  - To have more generations of Pokemon to choose from.
+  - Add more generations of Pokemon for user to choose from
+## Repo Link:
+https://github.com/DFiggy831/PokeEducator
