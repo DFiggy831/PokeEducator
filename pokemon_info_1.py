@@ -1,3 +1,11 @@
+# CST205: Mulitmedia Design and Programming
+# Nyra Usi
+# 12/7/2020
+# This program contains all the first 23 pokemon information and classifies strenghts as moves that are super effective and resistance.
+
+# Sources: https://www.serebii.net/xy/pokemon.shtml
+# Sources: https://pokestop.io/
+
 pokemon_info = [
     {
         "name" : "Chespin",

@@ -1,3 +1,8 @@
+# CST205: Mulitmedia Design and Programming
+# Nyra Usi
+# 12/5/2020
+# This program connects all webpages together and calculates the pokemon winner (calculations made by Huanhuan).
+
 from flask import Flask, render_template, url_for, flash, redirect
 from flask_bootstrap import Bootstrap
 
@@ -27,6 +32,7 @@ class Pokemon(FlaskForm):
     )
 
 both_pokemon = []
+
 # storing chosen pokemon in a list
 def store_pokemon(poke_1, poke_2):
 
@@ -52,15 +58,13 @@ def home():
 @app.route('/battle_arena', methods=('GET', 'POST'))
 def battle_arena():
     
-    # if validate_on_submit():
-    #     return redirect('/winner')
-
     # page displaying pokemon on battle arena
     return render_template('battle_arena.html', pokemon_info = pokemon_info, both_pokemon = both_pokemon)
 
 @app.route('/winner', methods=('GET', 'POST'))
 def winner():
-    pokemon_winner = "chespin"
+
+    # calculating pokemon winner 
     p1_c = 0
     p2_c = 0
     for pokemon in pokemon_info:

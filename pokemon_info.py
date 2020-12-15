@@ -1,3 +1,11 @@
+# CST205: Mulitmedia Design and Programming
+# Nyra Usi
+# 12/11/2020
+# This program contains all the pokemon information and classifies strenghts as moves that are super effective. Pokemon #674 - 719 done by Daniel and Jasmine.
+
+# Sources: https://www.serebii.net/xy/pokemon.shtml
+# Sources: https://pokestop.io/
+
 pokemon_info = [
     {
         "name" : "Chespin",
