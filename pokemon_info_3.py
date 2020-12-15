@@ -1,3 +1,8 @@
+# CST205
+# Daniel Figueroa
+# 12/11/2020
+# This progam contains information about the last 23 Pokemon of Generation 6
+
 # Link for Pokemon information: serebii.net/xy/pokemon.shtml
 # Link for type advantage information:  https://pokestop.io/
 pokemon_info = [
