@@ -23,3 +23,5 @@
   * [ ] Explanation of winner
 ## Repo Link
    https://github.com/DFiggy831/PokeEducator
+## Video Walkthrough
+GIF created with [LiceCap](http://www.cockos.com/licecap/)
