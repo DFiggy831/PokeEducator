@@ -3,6 +3,8 @@
 # 12/5/2020
 # This program connects all webpages together and calculates the pokemon winner (calculations made by Huanhuan).
 
+# Github Link: https://github.com/DFiggy831/PokeEducator
+
 from flask import Flask, render_template, url_for, flash, redirect
 from flask_bootstrap import Bootstrap
 
