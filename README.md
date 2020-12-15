@@ -25,3 +25,4 @@
    https://github.com/DFiggy831/PokeEducator
 ## Video Walkthrough
 GIF created with [LiceCap](http://www.cockos.com/licecap/)
+<img src='Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
