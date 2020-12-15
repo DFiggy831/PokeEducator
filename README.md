@@ -12,7 +12,7 @@
 ## Class
    CST205 - Multimedia Design & Programming
 ## Date
-   12/14/2020
+   Completed: 12/14/2020
 ## How to Run Program
   - export FLASK_APP=flask_pokemon.py
   - export FLASK_DEBUG=1
